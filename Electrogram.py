@@ -1,12 +1,12 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-k = 8.99 * 10**9  # ثابت کولن
+k = 8.99 * 10**9  # Coulomb's constant
 
 def electric_field(q, r, x, y):
 
     r_squared = r**2
-    # محاسبه میدان الکتریکی با استفاده از قانون کولن
+    # Calculating the electric field using Coulomb's law
     e_x = (k * q * x) / r_squared
     e_y = (k * q * y) / r_squared
     return e_x, e_y
@@ -30,7 +30,7 @@ def plot_electric_field(charges):
     
     for charge in charges:
         q, qx, qy = charge
-        plt.scatter(qx, qy, color='red' if q < 0 else 'blue')  # بارهای منفی قرمز و بارهای مثبت آبی
+        plt.scatter(qx, qy, color='red' if q < 0 else 'blue')  # Negative charges in red, positive in blue
         if q > 0:
             plt.text(qx, qy, f"+{q}", verticalalignment='bottom', horizontalalignment='right', color='blue')
         else:
@@ -42,7 +42,7 @@ def plot_electric_field(charges):
     plt.show()
 
 if __name__ == "__main__":
-    # افزودن بارهای الکتریکی
+    # Adding electric charges
     # charges = [(1, -2, 0), (-1, 2, 0), (2, 0, 2), (-2, 0, -2)]
     charges = [(-1, -2, 0)]
 
